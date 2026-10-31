@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_dark">#0B0F19</color>
+    <color name="card_bg">#151C2C</color>
+    <color name="card_focus_bg">#1E293B</color>
+    <color name="card_stroke">#25324B</color>
+    <color name="card_focus_stroke">#38BDF8</color>
+    
+    <color name="text_white">#F8FAFC</color>
+    <color name="text_dim">#94A3B8</color>
+    <color name="text_highlight">#38BDF8</color>
+    
+    <color name="accent_cpu">#00E5FF</color>
+    <color name="accent_ram">#10B981</color>
+    <color name="accent_rom">#A855F7</color>
+    <color name="accent_net">#F59E0B</color>
+    <color name="progress_bg">#1E293B</color>
+    
+    <color name="btn_normal">#1E293B</color>
+    <color name="btn_focus">#0284C7</color>
+    <color name="btn_clean_focus">#059669</color>
+</resources>

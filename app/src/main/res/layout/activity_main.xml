@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/bg_dark">
+
+    <!-- Top Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="THÔNG SỐ HỆ THỐNG TV"
+                android:textColor="@color/text_white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_device_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Casper Android TV • Realtek RTD2840 • Android 9 (API 28)"
+                android:textColor="@color/text_dim"
+                android:textSize="13sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_uptime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thời gian chạy: 00:00:00"
+            android:textColor="@color/text_highlight"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 4 Dashboard Cards -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <!-- Card 1: CPU -->
+        <LinearLayout
+            android:id="@+id/card_cpu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/card_bg"
+            android:focusable="true"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BỘ XỬ LÝ (CPU)"
+                android:textColor="@color/accent_cpu"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_cpu_usage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--%"
+                android:textColor="@color/text_white"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tv_cpu_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mức tải xử lý"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp" />
+
+            <ProgressBar
+                android:id="@+id/pb_cpu"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_bar_cyan"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/tv_cpu_cores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Nhân: 4 Cores Cortex-A53"
+                android:textColor="@color/text_white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_cpu_freq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Xung nhịp: 900 MHz"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tv_cpu_chip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Chip: Realtek RTD2840"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Kiến trúc: 32-bit ARMv7"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Card 2: RAM -->
+        <LinearLayout
+            android:id="@+id/card_ram"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/card_bg"
+            android:focusable="true"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BỘ NHỚ RAM"
+                android:textColor="@color/accent_ram"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_ram_avail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-- MB"
+                android:textColor="@color/text_white"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tv_ram_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Khả dụng / Trống"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp" />
+
+            <ProgressBar
+                android:id="@+id/pb_ram"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_bar_green"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/tv_ram_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Tổng RAM: 1.5 GB"
+                android:textColor="@color/text_white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_ram_used"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Đã dùng: -- MB (--%)"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tv_ram_free"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Còn trống: -- MB"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tv_ram_health"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Trạng thái: Bình thường"
+                android:textColor="@color/accent_ram"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Card 3: ROM -->
+        <LinearLayout
+            android:id="@+id/card_rom"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/card_bg"
+            android:focusable="true"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BỘ NHỚ TRONG (ROM)"
+                android:textColor="@color/accent_rom"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_rom_free"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-- GB"
+                android:textColor="@color/text_white"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tv_rom_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dung lượng trống"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp" />
+
+            <ProgressBar
+                android:id="@+id/pb_rom"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_bar_purple"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/tv_rom_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Tổng bộ nhớ: 4.0 GB"
+                android:textColor="@color/text_white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_rom_used"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Đã dùng: -- GB (--%)"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tv_rom_free_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Còn trống: -- GB"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Bộ nhớ: eMMC Flash"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Card 4: NETWORK -->
+        <LinearLayout
+            android:id="@+id/card_net"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/card_bg"
+            android:focusable="true"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KẾT NỐI MẠNG"
+                android:textColor="@color/accent_net"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_net_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-- Mbps"
+                android:textColor="@color/text_white"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tv_net_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tốc độ Wi-Fi"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp" />
+
+            <ProgressBar
+                android:id="@+id/pb_net"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_bar_amber"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/tv_net_ssid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Wi-Fi: Đang kết nối"
+                android:textColor="@color/text_white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_net_ip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• IP: 192.168.1.47"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tv_net_signal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Tín hiệu: Tốt"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tv_net_freq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Băng tần: 2.4 GHz"
+                android:textColor="@color/text_dim"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Actions -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚡ Tự động cập nhật mỗi 2 giây"
+            android:textColor="@color/text_dim"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="🔄 Làm mới"
+            android:textColor="@color/text_white"
+            android:textSize="13sp"
+            android:background="@drawable/btn_bg"
+            android:focusable="true"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <Button
+            android:id="@+id/btn_clean"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="🧹 Dọn dẹp RAM"
+            android:textColor="@color/text_white"
+            android:textSize="13sp"
+            android:background="@drawable/btn_clean_bg"
+            android:focusable="true"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginStart="10dp" />
+
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="✕ Thoát"
+            android:textColor="@color/text_white"
+            android:textSize="13sp"
+            android:background="@drawable/btn_bg"
+            android:focusable="true"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
+
+</LinearLayout>
